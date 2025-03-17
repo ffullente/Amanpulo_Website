@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Amanpulo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="bg-[#f5efe3]">
+    <header class="fixed top-0 left-0 w-full bg-[#f5efe3] bg-opacity-90 z-50 shadow-md">
+        <div class="container mx-auto flex items-center justify-between px-6 py-4">
+            <h1 class="text-2xl font-light tracking-wide">ĀMAN</h1>
+            <nav class="hidden md:flex space-x-6 text-black">
+                <a href="index.html" class="hover:text-gray-700">Homepage</a>
+                <a href="accommodation.html" class="hover:text-gray-700">Accommodation</a>
+                <a href="Amenities&Activities.html" class="hover:text-gray-700">Amenities & Activities</a>
+                <a href="contact.html" class="hover:text-gray-700">Contact Us</a>
+            </nav>
+            <button id="menu-btn" class="md:hidden text-gray-800 focus:outline-none">☰</button>
+        </div>
+    </header>
+
+    <div id="mobile-menu" class="fixed top-0 right-0 w-64 h-screen bg-[#f5efe3] shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto z-50 md:hidden">
+        <div class="p-6">
+            <button id="close-menu" class="text-gray-800 text-xl">✖</button>
+            <nav class="flex flex-col space-y-6 mt-10">
+                <a href="index.html" class="hover:text-gray-700">Homepage</a>
+                <a href="accommodation.html" class="hover:text-gray-700">Accommodation</a>
+                <a href="#" class="hover:text-gray-700">Amenities & Activities</a>
+                <a href="contact.html" class="hover:text-gray-700">Contact Us</a>
+                <a href="booking.html">
+                    <button class="bg-black text-white px-6 py-2 text-sm">
+                        Book Now
+                    </button>
+                </a>
+            </nav>
+        </div>
+    </div>
+    
+    <div class="relative w-full h-64 bg-cover bg-center" style="background-image: url('images/contact.jpg');">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="relative z-10 flex flex-col items-center justify-center h-full text-white">
+            <p class="text-sm uppercase tracking-wide">Tranquility and Luxury Experience</p>
+            <h1 class="text-4xl font-bold">Contact Us</h1>
+        </div>
+    </div>  
+    <div class="bg-[#f5efe3] py-12 px-6 md:px-12">
+        <div class="bg-white p-10 rounded-lg shadow-xl max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-[1fr,1.5fr] gap-8">
+
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold text-gray-700">Office Address</h3>
+                    <p class="text-gray-600 mt-2">Pamalican Island, Cuyo Archipelago, Palawan, Philippines</p>
+                    <h3 class="text-xl font-semibold text-gray-700 mt-6">Phone Number</h3>
+                    <p class="text-gray-600 mt-2">+63 2 7795 8995</p>
+                    <h3 class="text-xl font-semibold text-gray-700 mt-6">Email</h3>
+                    <p class="text-gray-600 mt-2">reservations@amanpulo.com</p>
+    
+                    <div class="mt-6 rounded-lg shadow-md overflow-hidden">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4813.233300768189!2d120.728158!3d11.356093999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTHCsDIxJzIxLjkiTiAxMjDCsDQzJzQxLjQiRQ!5e1!3m2!1sen!2sph!4v1741700360084!5m2!1sen!2sph" 
+                            class="w-full h-52 border-0" 
+                            allowfullscreen 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+    
+                <div class="bg-gray-50 p-8 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold text-gray-700 text-center">Send us a Message</h3>
+                    <form id="contact-form" class="mt-6">
+                        <div class="mb-4">
+                            <label class="block text-gray-700 font-medium">Category *</label>
+                            <select id="category" class="w-full p-3 border border-gray-300 rounded-md">
+                                <option value="">-- Select Category --</option>
+                                <option value="General Inquiry">General Inquiry</option>
+                                <option value="Room Reservations">Room Reservations</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 font-medium">Name *</label>
+                            <input type="text" id="name" class="w-full p-3 border border-gray-300 rounded-md" placeholder="Enter your name">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 font-medium">Email *</label>
+                            <input type="email" id="email" class="w-full p-3 border border-gray-300 rounded-md" placeholder="Enter your email">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 font-medium">Message *</label>
+                            <textarea id="message" rows="5" class="w-full p-3 border border-gray-300 rounded-md" placeholder="Your message"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-black text-white py-3 rounded-md hover:bg-gray-800 transition">
+                            Submit
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="bg-[#f5efe3] py-6 text-black text-center">
+        <div class="container mx-auto px-6">
+            <hr class="border-gray-300 mb-6">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <h1 class="text-2xl font-light tracking-wide">ĀMAN</h1>
+    
+                <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                    <span class="text-sm">Follow us on:</span>
+                    <a href="#"><img src="images/facebook.png" alt="Facebook" class="h-6"></a>
+                    <a href="#"><img src="images/twitter.png" alt="Twitter" class="h-6"></a>
+                    <a href="#"><img src="images/instagram.png" alt="Instagram" class="h-6"></a>
+                    <a href="#"><img src="images/youtube.png" alt="YouTube" class="h-6"></a>
+                    <a href="#"><img src="images/pinterest.png" alt="Pinterest" class="h-6"></a>
+                    <a href="#"><img src="images/weibo.png" alt="Weibo" class="h-6"></a>
+                    <a href="#"><img src="images/wechat.png" alt="WeChat" class="h-6"></a>
+                    <a href="#"><img src="images/whatsapp.png" alt="WhatsApp" class="h-6"></a>
+                </div>
+    
+                <p class="text-sm mt-4 md:mt-0">Copyright 2025, Aman Group S.a.r.l.</p>
+            </div>
+        </div>
+    </footer>
+    
+
+    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40"></div>
+
+    <script>
+        document.getElementById("menu-btn").addEventListener("click", function() {
+            document.getElementById("mobile-menu").classList.remove("translate-x-full");
+        });
+        document.getElementById("close-menu").addEventListener("click", function() {
+            document.getElementById("mobile-menu").classList.add("translate-x-full");
+        });
+        
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let category = document.getElementById("category").value;
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let message = document.getElementById("message").value.trim();
+            if (category === "" || name === "" || email === "" || message === "") {
+                alert("Please fill in all required fields.");
+                return;
+            }
+            alert("Your message has been sent!");
+            document.getElementById("contact-form").reset();
+        });
+    </script>
+</body>
+</html>

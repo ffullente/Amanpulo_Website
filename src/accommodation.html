@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Playfair Display', serif;
+    }
+  </style>
+    <title>Accommodation</title>
+</head>
+<body class="bg-[#f5efe3]">
+
+  <nav class="fixed top-0 left-0 w-full bg-[#f5efe3] bg-opacity-90 z-50 shadow-md">
+    <div class="container mx-auto flex items-center justify-between px-6 py-4">
+      <h1 class="text-2xl font-light tracking-wide">ĀMAN</h1>
+      <nav class="hidden md:flex space-x-6 text-black">
+        <a href="index.html" class="hover:text-gray-700">Homepage</a>
+        <a href="accommodation.html" class="hover:text-gray-700">Accommodation</a>
+        <a href="Amenities&Activities.html" class="hover:text-gray-700">Amenities & Activities</a>
+        <a href="contact.html" class="hover:text-gray-700">Contact Us</a>
+      </nav>
+      <button id="menu-btn" class="md:hidden text-gray-800 focus:outline-none">☰</button>
+    </div>
+  </nav>
+
+  <div id="mobile-menu" class="fixed top-0 right-0 w-64 h-screen bg-[#f5efe3] shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto z-50 md:hidden">
+    <div class="p-6">
+      <button id="close-menu" class="text-gray-800 text-xl">✖</button>
+      <nav class="flex flex-col space-y-6 mt-10">
+        <a href="index.html" class="hover:text-gray-700">Homepage</a>
+        <a href="accommodation.html" class="hover:text-gray-700">Accommodation</a>
+        <a href="Amenities&Activities.html" class="hover:text-gray-700">Amenities & Activities</a>
+        <a href="contact.html" class="hover:text-gray-700">Contact Us</a>
+        <a href="booking.html">
+          <button class="bg-black text-white px-6 py-2 text-sm">Book Now</button>
+        </a>
+      </nav>
+    </div>
+  </div>
+
+  <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40"></div>
+
+  <header class=" bg-cover bg-center h-96 flex items-center justify-center text-black text-center mt-16">
+    <h1 class="text-5xl md:text-6xl font-light shadow-lg">Amanpulo Accommodation</h1>
+  </header>
+
+  <div class="container mx-auto px-4 py-12 mt-16">
+    <section class="mb-16">
+      <h2 class="text-4xl font-light text-gray-800 border-b-2 border-gray-200 pb-4">Your Secluded Sanctuary Awaits</h2>
+      <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+        Hidden on the pristine shores of Pamalican Island, Amanpulo offers an unrivaled escape where luxury meets nature. Immerse yourself in breathtaking views, unparalleled privacy, and world-class elegance in our exclusive villas and casitas.
+      </p>
+    </section>
+
+    <section class="mb-16 flex justify-center items-center">
+      <div class="bg-gray-50 p-8 rounded-lg shadow-lg max-w-6xl w-full">
+        <h2 class="text-4xl font-light text-gray-800 border-b-2 border-gray-200 pb-4 text-center">All Stays Include</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6">
+          <ul class="list-disc list-inside space-y-2 text-lg text-gray-700">
+            <li>Daily breakfast</li>
+            <li>Daily scheduled wellness class (advance booking required)</li>
+            <li>Use of selected non-motorised watersports equipment</li>
+          </ul>
+          <ul class="list-disc list-inside space-y-2 text-lg text-gray-700">
+            <li>Daily afternoon tea at the Clubhouse</li>
+            <li>Daily morning snorkeling trip from the beach (to be provided on a first come, first serve basis)</li>
+          </ul>
+          <ul class="list-disc list-inside space-y-2 text-lg text-gray-700">
+            <li>In-room refreshments and non-alcoholic beverages</li>
+            <li>Access to wellness facilities including yoga pavilion and Pilates studio, steam room, cold plunge pool, and fitness center</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-16">
+      <h2 class="text-4xl font-light text-gray-800 border-b-2 border-gray-200 pb-4">CASITAS</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
+          <img src="images/Beach Casita.jpg" alt="Beach Casita" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold text-gray-800">Beach Casitas</h3>
+            <p class="text-gray-600 mt-2">From $2,436 / night</p>
+            <button data-target="beach-casita-details" class="mt-4 bg-black text-white px-6 py-3 bg-black text-white text-lg rounded-lg shadow-md hover:bg-gray-700 transition">View Details</button>
+          </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
+          <img src="images/BeachPool.jpg" alt="Beach Casita" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold text-gray-800">Beach Pool Casitas</h3>
+            <p class="text-gray-600 mt-2">From $3,323 / night</p>
+            <button data-target="beach-pool-casita-details" class="mt-4 bg-black text-white px-6 py-3 bg-black text-white text-lg rounded-lg shadow-md hover:bg-gray-700 transition">View Details</button>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
+          <img src="images/treetopCasita.jpg" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold text-gray-800">Treetop Casitas</h3>
+            <p class="text-gray-600 mt-2">From $1,904 / night</p>
+            <button data-target="treetop-casita-details" class="mt-4 bg-black text-white px-6 py-3 bg-black text-white text-lg rounded-lg shadow-md hover:bg-gray-700 transition">View Details</button>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
+            <img src="images/treetopPool.jpg" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <h3 class="text-2xl font-semibold text-gray-800">Treetop Pool Casitas</h3>
+              <p class="text-gray-600 mt-2">From $2,184 / night</p>
+              <button data-target="treetop-pool-casita-details" class="mt-4 bg-black text-white px-6 py-3 bg-black text-white text-lg rounded-lg shadow-md hover:bg-gray-700 transition">View Details</button>
+            </div>
+          </div>
+
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
+          <img src="images/hillside.webp" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-semibold text-gray-800">Hillside Casitas</h3>
+            <p class="text-gray-600 mt-2">From $2,016 / night</p>
+            <button data-target="hillside-casita-details" class="mt-4 bg-black text-white px-6 py-3 bg-black text-white text-lg rounded-lg shadow-md hover:bg-gray-700 transition">View Details</button>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
+            <img src="images/Deluxe.jpg" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <h3 class="text-2xl font-semibold text-gray-800">Deluxe Hillside Casitas</h3>
+              <p class="text-gray-600 mt-2">From $2,184 / night</p>
+              <button data-target="deluxe-hillside-casita-details" class="mt-4 bg-black text-white px-6 py-3 bg-black text-white text-lg rounded-lg shadow-md hover:bg-gray-700 transition">View Details</button>
+            </div>
+          </div>
+      </div>
+
+    </section>
+    <section class="mb-16">
+        <h2 class="text-4xl font-light text-gray-800 border-b-2 border-gray-200 pb-4">VILLAS</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
+            <img src="images/4bedroomv.jpg" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <h3 class="text-2xl font-semibold text-gray-800"> Four-Bedroom Palawan Villa</h3>
+              <p class="text-gray-600 mt-2">From $9,184/ night</p>
+              <button data-target="four-bedroom-villa-details" class="mt-4 bg-black text-white px-6 py-3 bg-black text-white text-lg rounded-lg shadow-md hover:bg-gray-700 transition">View Details</button>
+            </div>
+          </div>
+  
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
+            <img src="images/4BRLagoon.webp" class="w-full h-48 object-cover">  
+            <div class="p-6">
+              <h3 class="text-2xl font-semibold text-gray-800">Four-Bedroom Lagoon Villa</h3>
+              <p class="text-gray-600 mt-2">From $8,624 / night</p>
+              <button data-target="four-bedroom-lagoon-villa-details" class="mt-4 bg-black text-white px-6 py-3 bg-black text-white text-lg rounded-lg shadow-md hover:bg-gray-700 transition">View Details</button>
+            </div>
+          </div>
+  
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
+            <img src="images/3Bedroom.jpg" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <h3 class="text-2xl font-semibold text-gray-800">Three-Bedroom Villa</h3>
+              <p class="text-gray-600 mt-2">From $7,560 / night</p>
+              <button data-target="three-bedroom-details" class="mt-4 bg-black text-white px-6 py-3 bg-black text-white text-lg rounded-lg shadow-md hover:bg-gray-700 transition">View Details</button>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
+            <img src="images/2Bedroom.jpg" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <h3 class="text-2xl font-semibold text-gray-800">Two-Bedroom Villa</h3>
+              <p class="text-gray-600 mt-2">From $2,464 / night</p>
+              <button data-target="two-bedroom-villa-details" class="mt-4 bg-black text-white px-6 py-3 bg-black text-white text-lg rounded-lg shadow-md hover:bg-gray-700 transition">View Details</button>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105">
+            <img src="images/1Bed.jpg" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <h3 class="text-2xl font-semibold text-gray-800">One-Bedroom Villa</h3>
+              <p class="text-gray-600 mt-2">From $2,464 / night</p>
+              <button data-target="one-bedroom-villa-details" class="mt-4 bg-black text-white px-6 py-3 bg-black text-white text-lg rounded-lg shadow-md hover:bg-gray-700 transition">View Details</button>
+            </div>
+          </div>
+        </div>
+      
+      </section>
+
+      <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+        <div class="relative bg-white rounded-lg shadow-lg max-w-2xl mx-auto mt-20 p-6 overflow-y-auto">
+          <button id="close-modal" class="absolute top-4 right-4 text-gray-800 text-xl">✖</button>
+          <div id="modal-content"></div>
+        </div>
+      </div>
+      
+      <div id="beach-casita-details" class="hidden fixed inset-0 z-50 overflow-y-auto bg-gray-900 bg-opacity-50">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-gray-100 p-6 rounded-lg shadow-lg max-w-5xl w-full mx-auto overflow-y-auto max-h-[90vh]">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="overflow-hidden rounded-lg shadow-md">
+                        <div class="flex snap-x snap-mandatory overflow-x-auto scroll-smooth">
+                            <div class="w-full flex-shrink-0 snap-always">
+                                <img src="images/BC.jpg" alt="Beach Casitas"
+                                    class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                            </div>
+                            <div class="w-full flex-shrink-0 snap-always">
+                                <img src="images/BC1.webp" alt="Beach Casitas"
+                                    class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                            </div>
+                            <div class="w-full flex-shrink-0 snap-always">
+                                <img src="images/BC2.jpg" alt="Beach Casitas"
+                                    class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                            </div>
+                            <div class="w-full flex-shrink-0 snap-always">
+                              <img src="images/BC3.jpg" alt="Beach Casitas"
+                                  class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                          </div>
+                        <div class="w-full flex-shrink-0 snap-always">
+                          <img src="images/BC4.jpg" alt="Beach Casitas"
+                              class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                      </div>
+                      <div class="w-full flex-shrink-0 snap-always">
+                        <img src="images/BC5.jpg" alt="Beach Casitas"
+                            class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                    </div>
+                    <div class="w-full flex-shrink-0 snap-always">
+                      <img src="images/BC6.jpg" alt="Beach Casitas"
+                          class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                  </div>
+                  <div class="w-full flex-shrink-0 snap-always">
+                    <img src="images/BC7.jpg" alt="Beach Casitas"
+                        class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                </div>
+                <div class="w-full flex-shrink-0 snap-always">
+                  <img src="images/BC8.jpg" alt="Beach Casitas"
+                      class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+              </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col justify-between">
+                        <div>
+                            <h2 class="text-3xl font-semibold text-gray-800">Beach Casitas</h2>
+                            <p class="text-gray-600 mt-4">
+                              Beach Casitas are set along Amanpulo's white-sand beach,with wooden sundecks and beach-side hammocks
+                            </p>
+                            <p class="text-gray-800 text-xl font-semibold mt-4">From <span class="text-black">$2,436</span> / night</p>
+                            <p class="text-gray-500 text-sm">Including taxes & fees</p>
+                        </div>
+                        <div class="mt-6 text-center">
+                            <a href="booking.html">
+                                <button class="px-6 py-3 bg-black text-white text-lg rounded-lg shadow-md hover:bg-gray-700 transition">
+                                    Book Now
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="md:col-span-2 bg-white p-6 rounded-lg shadow-md">
+                      <h3 class="text-2xl font-semibold text-center text-gray-800 mb-4">Amenities</h3>
+                      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-gray-600 text-sm">
+                        <div class="flex items-center space-x-2">
+                          <span class="list-disc">•</span>
+                          <p>Beachside with sea views</p>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                          <span class="list-disc">•</span>
+                          <p>King size bed</p>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                          <span class="list-disc">•</span>
+                          <p>Bathroom with Cebu marble</p>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                          <span class="list-disc">•</span>
+                          <p>Twin vanities,rain shower</p>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                          <span class="list-disc">•</span>
+                          <p>Outdoor divans,private deck</p>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                          <span class="list-disc">•</span>
+                          <p>Beach side Hammock</p>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                          <span class="list-disc">•</span>
+                          <p>High Ceiling</p>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div> 
+  <div id="beach-pool-casita-details" class="hidden fixed inset-0 z-50 overflow-y-auto bg-gray-900 bg-opacity-50">
+    <div class="flex items-center justify-center min-h-screen p-4">
+        <div class="bg-gray-100 p-6 rounded-lg shadow-lg max-w-5xl w-full mx-auto overflow-y-auto max-h-[90vh]">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="overflow-hidden rounded-lg shadow-md">
+                    <div class="flex snap-x snap-mandatory overflow-x-auto scroll-smooth">
+                        <div class="w-full flex-shrink-0 snap-always">
+                            <img src="images/BCP1.webp" alt="Beach Pool Casitas"
+                                class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                        </div>
+                        <div class="w-full flex-shrink-0 snap-always">
+                            <img src="images/BC1.webp" alt="Beach Pool Casitas"
+                                class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                        </div>
+                        <div class="w-full flex-shrink-0 snap-always">
+                            <img src="images/BCP2.jpg" alt="Beach Pool Casitas"
+                                class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                        </div>
+                        <div class="w-full flex-shrink-0 snap-always">
+                          <img src="images/BCP3.jpg" alt="Beach Pool Casitas"
+                              class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                      </div>
+                    <div class="w-full flex-shrink-0 snap-always">
+                      <img src="images/BCP4.jpg" alt="Beach Pool Casitas"
+                          class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                  </div>
+                  <div class="w-full flex-shrink-0 snap-always">
+                    <img src="images/BCP5.jpg" alt="Beach Pool Casitas"
+                        class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                </div>
+                <div class="w-full flex-shrink-0 snap-always">
+                  <img src="images/BCP6.webp" alt="Beach Pool Casitas"
+                      class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+              </div>
+              <div class="w-full flex-shrink-0 snap-always">
+                <img src="images/BCP7.jpg" alt="Beach Pool Casitas"
+                    class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+            </div>
+            <div class="w-full flex-shrink-0 snap-always">
+              <img src="images/BC8.jpg" alt="Beach Pool Casitas"
+                  class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+          </div>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-between">
+                    <div>
+                        <h2 class="text-3xl font-semibold text-gray-800">Beach Pool Casitas</h2>
+                        <p class="text-gray-600 mt-4">
+                          The Private plunge pools of Beach Pool Casitas echo the restorative qualities of these peaceful Pamalican waters.
+                        </p>
+                        <p class="text-gray-800 text-xl font-semibold mt-4">From <span class="text-black">$3,323</span> / night</p>
+                        <p class="text-gray-500 text-sm">Including taxes & fees</p>
+                    </div>
+                    <div class="mt-6 text-center">
+                        <a href="booking.html">
+                            <button class="px-6 py-3 bg-black text-white text-lg rounded-lg shadow-md hover:bg-gray-700 transition">
+                                Book Now
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:col-span-2 bg-white p-6 rounded-lg shadow-md">
+                  <h3 class="text-2xl font-semibold text-center text-gray-800 mb-4">Amenities</h3>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-gray-600 text-sm">
+                    <div class="flex items-center space-x-2">
+                      <span class="list-disc">•</span>
+                      <p>Beachside with sea and island views</p>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                      <span class="list-disc">•</span>
+                      <p>Private pool</p>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                      <span class="list-disc">•</span>
+                      <p>King size Bed</p>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                      <span class="list-disc">•</span>
+                      <p>Bathroom with Cebu marble</p>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                      <span class="list-disc">•</span>
+                      <p>Twin vanities,rain shower</p>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                      <span class="list-disc">•</span>
+                      <p>Beachside Hammock</p>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                      <span class="list-disc">•</span>
+                      <p>Outdoor shower</p>
+                    </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div> 
+<div id="treetop-casita-details" class="hidden fixed inset-0 z-50 overflow-y-auto bg-gray-900 bg-opacity-50">
+  <div class="flex items-center justify-center min-h-screen p-4">
+      <div class="bg-gray-100 p-6 rounded-lg shadow-lg max-w-5xl w-full mx-auto overflow-y-auto max-h-[90vh]">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div class="overflow-hidden rounded-lg shadow-md">
+                  <div class="flex snap-x snap-mandatory overflow-x-auto scroll-smooth">
+                      <div class="w-full flex-shrink-0 snap-always">
+                          <img src="images/TC.jpg" alt="Treetop Casitas"
+                              class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                      </div>
+                      <div class="w-full flex-shrink-0 snap-always">
+                          <img src="images/TC1.jpg" alt="Treetop Casitas"
+                              class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                      </div>
+                      <div class="w-full flex-shrink-0 snap-always">
+                          <img src="images/TC2.jpg" alt="Treetop Casitas"
+                              class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                      </div>
+                      <div class="w-full flex-shrink-0 snap-always">
+                        <img src="images/TC3.jpg" alt="Treetop Casitas"
+                            class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                  </div>
+              </div>
+              </div>
+              <div class="flex flex-col justify-between">
+                  <div>
+                      <h2 class="text-3xl font-semibold text-gray-800">Treetop Casitas</h2>
+                      <p class="text-gray-600 mt-4">
+                        The Private plunge pools of Beach Pool Casitas echo the restorative qualities of these peaceful Pamalican waters.
+                      </p>
+                      <p class="text-gray-800 text-xl font-semibold mt-4">From <span class="text-black">$1,904</span> / night</p>
+                      <p class="text-gray-500 text-sm">Including taxes & fees</p>
+                  </div>
+                  <div class="mt-6 text-center">
+                      <a href="booking.html">
+                          <button class="px-6 py-3 bg-black text-white text-lg rounded-lg shadow-md hover:bg-gray-700 transition">
+                              Book Now
+                          </button>
+                      </a>
+                  </div>
+              </div>
+              <div class="md:col-span-2 bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-2xl font-semibold text-center text-gray-800 mb-4">Amenities</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-gray-600 text-sm">
+                  <div class="flex items-center space-x-2">
+                    <span class="list-disc">•</span>
+                    <p>Private deck with treetop views</p>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <span class="list-disc">•</span>
+                    <p>King size Bed</p>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <span class="list-disc">•</span>
+                    <p>Bathroom with Cebu marble</p>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <span class="list-disc">•</span>
+                    <p>Twin vanities,rain shower</p>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <span class="list-disc">•</span>
+                    <p>Outdoor divans</p>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <span class="list-disc">•</span>
+                    <p>Timber Ceilings</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div> 
+<div id="treetop-pool-casita-details" class="hidden fixed inset-0 z-50 overflow-y-auto bg-gray-900 bg-opacity-50">
+  <div class="flex items-center justify-center min-h-screen p-4">
+      <div class="bg-gray-100 p-6 rounded-lg shadow-lg max-w-5xl w-full mx-auto overflow-y-auto max-h-[90vh]">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div class="overflow-hidden rounded-lg shadow-md">
+                  <div class="flex snap-x snap-mandatory overflow-x-auto scroll-smooth">
+                      <div class="w-full flex-shrink-0 snap-always">
+                          <img src="images/TP.jpg" alt="Treetop Pool Casitas"
+                              class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                      </div>
+                      <div class="w-full flex-shrink-0 snap-always">
+                          <img src="images/TP1.jpg" alt="Treetop Pool Casitas"
+                              class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                      </div>
+                      <div class="w-full flex-shrink-0 snap-always">
+                          <img src="images/TP2.jpg" alt="Treetop Pool Casitas"
+                              class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                      </div>
+                      <div class="w-full flex-shrink-0 snap-always">
+                        <img src="images/TP3.jpg" alt="Treetop Pool Casitas"
+                            class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                    </div>
+                    </div>
+                    </div>
+                    <div class="flex flex-col justify-between">
+                      <div>
+                      <h2 class="text-3xl font-semibold text-gray-800">Treetop Pool Casitas</h2>
+                      <p class="text-gray-600 mt-4">
+                        Secluded in the forest canopy,Amanpulo's Treetop Pool Casitas offer 68 sq m of living space,including a wooden sundeck and a swimming pool.
+                      </p>
+                      <p class="text-gray-800 text-xl font-semibold mt-4">From <span class="text-black">$2,184</span> / night</p>
+                      <p class="text-gray-500 text-sm">Including taxes & fees</p>
+                  </div>
+                  <div class="mt-6 text-center">
+                      <a href="booking.html">
+                          <button class="px-6 py-3 bg-black text-white text-lg rounded-lg shadow-md hover:bg-gray-700 transition">
+                              Book Now
+                          </button>
+                      </a>
+                  </div>
+              </div>
+              <div class="md:col-span-2 bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-2xl font-semibold text-center text-gray-800 mb-4">Amenities</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-gray-600 text-sm">
+                  <div class="flex items-center space-x-2">
+                    <span class="list-disc">•</span>
+                    <p>Private deck with treetop views</p>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <span class="list-disc">•</span>
+                    <p>King size Bed</p>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <span class="list-disc">•</span>
+                    <p>Bathroom with Cebu marble</p>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <span class="list-disc">•</span>
+                    <p>Twin vanities,rain shower</p>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <span class="list-disc">•</span>
+                    <p>Outdoor divans</p>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <span class="list-disc">•</span>
+                    <p>Timber Ceilings</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div> 
+<div id="hillside-casita-details" class="hidden fixed inset-0 z-50 overflow-y-auto bg-gray-900 bg-opacity-50">
+  <div class="flex items-center justify-center min-h-screen p-4">
+      <div class="bg-gray-100 p-6 rounded-lg shadow-lg max-w-5xl w-full mx-auto overflow-y-auto max-h-[90vh]">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div class="overflow-hidden rounded-lg shadow-md">
+                  <div class="flex snap-x snap-mandatory overflow-x-auto scroll-smooth">
+                      <div class="w-full flex-shrink-0 snap-always">
+                          <img src="images/HC.jpg" alt="Hillside Casitas"
+                              class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                      </div>
+                      <div class="w-full flex-shrink-0 snap-always">
+                          <img src="images/HC1.jpg" alt="Hillside Casitas"
+                              class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                      </div>
+                      <div class="w-full flex-shrink-0 snap-always">
+                          <img src="images/HC2.jpg" alt="Hillside Casitas"
+                              class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                      </div>
+                    </div>
+                    </div>
+                    <div class="flex flex-col justify-between">
+                      <div>
+                      <h2 class="text-3xl font-semibold text-gray-800">Hillside Casitas</h2>
+                      <p class="text-gray-600 mt-4">
+                        Tucked away on the hillside,Hillside Casitas enjoy their own private decks with partial sea views.
+                      </p>
+                      <p class="text-gray-800 text-xl font-semibold mt-4">From <span class="text-black">$2,016</span> / night</p>
+                      <p class="text-gray-500 text-sm">Including taxes & fees</p>
+                  </div>
+                  <div class="mt-6 text-center">
+                      <a href="booking.html">
+                          <button class="px-6 py-3 bg-black text-white text-lg rounded-lg shadow-md hover:bg-gray-700 transition">
+                              Book Now
+                          </button>
+                      </a>
+                  </div>
+              </div>
+              <div class="md:col-span-2 bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-2xl font-semibold text-center text-gray-800 mb-4">Amenities</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-gray-600 text-sm">
+                  <div class="flex items-center space-x-2">
+                    <span class="list-disc">•</span>
+                    <p>Private deck with treetop views</p>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <span class="list-disc">•</span>
+                    <p>King size Bed</p>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <span class="list-disc">•</span>
+                    <p>Bathroom with Cebu marble</p>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <span class="list-disc">•</span>
+                    <p>Twin vanities,rain shower</p>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <span class="list-disc">•</span>
+                    <p>Outdoor divans</p>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <span class="list-disc">•</span>
+                    <p>Timber Ceilings</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div> 
+<div id="deluxe-hillside-casita-details" class="hidden fixed inset-0 z-50 overflow-y-auto bg-gray-900 bg-opacity-50">
+  <div class="flex items-center justify-center min-h-screen p-4">
+      <div class="bg-gray-100 p-6 rounded-lg shadow-lg max-w-5xl w-full mx-auto overflow-y-auto max-h-[90vh]">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div class="overflow-hidden rounded-lg shadow-md">
+                  <div class="flex snap-x snap-mandatory overflow-x-auto scroll-smooth">
+                      <div class="w-full flex-shrink-0 snap-always">
+                          <img src="images/DH.webp" alt="Deluxe Hillside Casitas"
+                              class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                      </div>
+                      <div class="w-full flex-shrink-0 snap-always">
+                          <img src="images/DH1.jpg" alt="Deluxe Hillside Casitas"
+                              class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                      </div>
+                      <div class="w-full flex-shrink-0 snap-always">
+                          <img src="images/DH2.jpg" alt="Deluxe Hillside Casitas"
+                              class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                      </div>
+                    </div>
+                    </div>
+                    <div class="flex flex-col justify-between">
+                      <div>
+                      <h2 class="text-3xl font-semibold text-gray-800">Deluxe Hillside Casitas</h2>
+                      <p class="text-gray-600 mt-4">
+                        Deluxe Hillside Casitas offers spectacular ocean panoramas from their priveledged hillside position.
+                      </p>
+                      <p class="text-gray-800 text-xl font-semibold mt-4">From <span class="text-black">$2,184</span> / night</p>
+                      <p class="text-gray-500 text-sm">Including taxes & fees</p>
+                  </div>
+                  <div class="mt-6 text-center">
+                      <a href="booking.html">
+                          <button class="px-6 py-3 bg-black text-white text-lg rounded-lg shadow-md hover:bg-gray-700 transition">
+                              Book Now
+                          </button>
+                      </a>
+                  </div>
+              </div>
+              <div class="md:col-span-2 bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-2xl font-semibold text-center text-gray-800 mb-4">Amenities</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-gray-600 text-sm">
+                  <div class="flex items-center space-x-2">
+                    <span class="list-disc">•</span>
+                    <p>Private deck with treetop views</p>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <span class="list-disc">•</span>
+                    <p>King size Bed</p>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <span class="list-disc">•</span>
+                    <p>Bathroom with Cebu marble</p>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <span class="list-disc">•</span>
+                    <p>Twin vanities,rain shower</p>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <span class="list-disc">•</span>
+                    <p>Outdoor divans</p>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <span class="list-disc">•</span>
+                    <p>Timber Ceilings</p>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div> 
+          <div id="four-bedroom-villa-details" class="hidden fixed inset-0 z-50 overflow-y-auto bg-gray-900 bg-opacity-50">
+            <div class="flex items-center justify-center min-h-screen p-4">
+                <div class="bg-gray-100 p-6 rounded-lg shadow-lg max-w-5xl w-full mx-auto overflow-y-auto max-h-[90vh]">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="overflow-hidden rounded-lg shadow-md">
+                            <div class="flex snap-x snap-mandatory overflow-x-auto scroll-smooth">
+                                <div class="w-full flex-shrink-0 snap-always">
+                                    <img src="images/4BRVilla.jpg" alt="Four-Bedroom Palawan Villa"
+                                        class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                                </div>
+                                <div class="w-full flex-shrink-0 snap-always">
+                                    <img src="images/4BR_exterior.jpg" alt="Four-Bedroom Villa"
+                                        class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                                </div>
+                                <div class="w-full flex-shrink-0 snap-always">
+                                    <img src="images/4BR_Bedroom.webp" alt="Four-Bedroom Palawan Villa"
+                                        class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                                </div>
+                                <div class="w-full flex-shrink-0 snap-always">
+                                  <img src="images/4BR_Lounge.jpg" alt="Four-Bedroom Palawan Villa"
+                                      class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                              </div>
+                              <div class="w-full flex-shrink-0 snap-always">
+                                <img src="images/4BR_pool.webp" alt="Four-Bedroom Palawan Villa"
+                                    class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                            </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-between">
+                            <div>
+                                <h2 class="text-3xl font-semibold text-gray-800">Four-Bedroom Palawan Villa</h2>
+                                <p class="text-gray-600 mt-4">
+                                    These elegant beachside villas are designed around a central infinity pool.Set on a plot of just over an acre,the air-conditioned interiors extend to 3,778 sq ft(351sq m)
+                                </p>
+                                <p class="text-gray-800 text-xl font-semibold mt-4">From <span class="text-black">$9,184</span> / night</p>
+                                <p class="text-gray-500 text-sm">Including taxes & fees</p>
+                            </div>
+                            <div class="mt-6 text-center">
+                                <a href="booking.html">
+                                    <button class="px-6 py-3 bg-black text-white text-lg rounded-lg shadow-md hover:bg-gray-700 transition">
+                                        Book Now
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="md:col-span-2 bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-2xl font-semibold text-center text-gray-800 mb-4">Amenities</h3>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-gray-600 text-sm">
+                              <div class="flex items-center space-x-2">
+                                <span class="list-disc">•</span>
+                                <p>Beachside with sea views</p>
+                              </div>
+                              <div class="flex items-center space-x-2">
+                                <span class="list-disc">•</span>
+                                <p>Private swimming pool</p>
+                              </div>
+                              <div class="flex items-center space-x-2">
+                                <span class="list-disc">•</span>
+                                <p>Chef and Butler</p>
+                              </div>
+                              <div class="flex items-center space-x-2">
+                                <span class="list-disc">•</span>
+                                <p>Four ensuite bedrooms</p>
+                              </div>
+                              <div class="flex items-center space-x-2">
+                                <span class="list-disc">•</span>
+                                <p>Bathtub, shower, twin vanities</p>
+                              </div>
+                              <div class="flex items-center space-x-2">
+                                <span class="list-disc">•</span>
+                                <p>Living and dining pavilion</p>
+                              </div>
+                              <div class="flex items-center space-x-2">
+                                <span class="list-disc">•</span>
+                                <p>Kitchen</p>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+          <div id="four-bedroom-lagoon-villa-details" class="hidden fixed inset-0 z-50 overflow-y-auto bg-gray-900 bg-opacity-50">
+            <div class="flex items-center justify-center min-h-screen p-4">
+                <div class="bg-gray-100 p-6 rounded-lg shadow-lg max-w-5xl w-full mx-auto overflow-y-auto max-h-[90vh]">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="overflow-hidden rounded-lg shadow-md">
+                            <div class="flex snap-x snap-mandatory overflow-x-auto scroll-smooth">
+                                <div class="w-full flex-shrink-0 snap-always">
+                                    <img src="images/4BR.jpg" alt="Four-Bedroom Lagoon Villa"
+                                        class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                                </div>
+                                <div class="w-full flex-shrink-0 snap-always">
+                                    <img src="images/4BRLOUNGE.webp" alt="Four-Bedroom Lagoon Villa"
+                                        class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                                </div>
+                                <div class="w-full flex-shrink-0 snap-always">
+                                    <img src="images/4BRP_BED.webp" alt="Four-Bedroom Villa"
+                                        class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                                </div>
+                                <div class="w-full flex-shrink-0 snap-always">
+                                  <img src="images/4GBRDINING.jpg" alt="Four-Bedroom Lagoon Villa"
+                                      class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                              </div>
+                            <div class="w-full flex-shrink-0 snap-always">
+                              <img src="images/4BRLagoon.webp" alt="Four-Bedroom Lagoon Villa"
+                                  class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                          </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-between">
+                            <div>
+                                <h2 class="text-3xl font-semibold text-gray-800">Four-Bedroom Lagoon Villa</h2>
+                                <p class="text-gray-600 mt-4">
+                                    Surrounded by tranquility,The Four-Bedroom Lagoon Villa features spacious casitas,a private pavillion and a plunge pool,offering unparalleledprivacy
+                                </p>
+                                <p class="text-gray-800 text-xl font-semibold mt-4">From <span class="text-black">$8,624</span> / night</p>
+                                <p class="text-gray-500 text-sm">Including taxes & fees</p>
+                            </div>
+                            <div class="mt-6 text-center">
+                                <a href="booking.html">
+                                    <button class="px-6 py-3 bg-black text-white text-lg rounded-lg shadow-md hover:bg-gray-700 transition">
+                                        Book Now
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="md:col-span-2 bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-2xl font-semibold text-center text-gray-800 mb-4">Amenities</h3>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-gray-600 text-sm">
+                              <div class="flex items-center space-x-2">
+                                <span class="list-disc">•</span>
+                                <p>Beachside with sea views</p>
+                              </div>
+                              <div class="flex items-center space-x-2">
+                                <span class="list-disc">•</span>
+                                <p>Bathroom with Cebu Marble</p>
+                              </div>
+                              <div class="flex items-center space-x-2">
+                                <span class="list-disc">•</span>
+                                <p>Four ensuite bedrooms</p>
+                              </div>
+                              <div class="flex items-center space-x-2">
+                                <span class="list-disc">•</span>
+                                <p>Twin vanities,rain shower</p>
+                              </div>
+                              <div class="flex items-center space-x-2">
+                                <span class="list-disc">•</span>
+                                <p>Outdoor divans</p>
+                              </div>
+                              <div class="flex items-center space-x-2">
+                                <span class="list-disc">•</span>
+                                <p>Timber Ceilings</p>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <div id="three-bedroom-details" class="hidden fixed inset-0 z-50 overflow-y-auto bg-gray-900 bg-opacity-50">
+          <div class="flex items-center justify-center min-h-screen p-4">
+              <div class="bg-gray-100 p-6 rounded-lg shadow-lg max-w-5xl w-full mx-auto overflow-y-auto max-h-[90vh]">
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      <div class="overflow-hidden rounded-lg shadow-md">
+                          <div class="flex snap-x snap-mandatory overflow-x-auto scroll-smooth">
+                              <div class="w-full flex-shrink-0 snap-always">
+                                  <img src="images/3BR.jpg" alt="Three-Bedroom Villa"
+                                      class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                              </div>
+                              <div class="w-full flex-shrink-0 snap-always">
+                                  <img src="images/3BR1.jpg" alt="Three-Bedroom Villa"
+                                      class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                              </div>
+                              <div class="w-full flex-shrink-0 snap-always">
+                                  <img src="images/3BR2.jpg" alt= "Three-Bedroom Villa"
+                                      class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                              </div>
+                              <div class="w-full flex-shrink-0 snap-always">
+                                <img src="images/3BR3.jpg" alt="Three-Bedroom Villa"
+                                    class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                            </div>
+                          <div class="w-full flex-shrink-0 snap-always">
+                            <img src="images/3BR4.jpg" alt="Three-Bedroom Villa"
+                                class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                        </div>
+                        <div class="w-full flex-shrink-0 snap-always">
+                          <img src="images/3BR5.jpg" alt="Three-Bedroom Villa"
+                              class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                      </div>
+                          </div>
+                      </div>
+                      <div class="flex flex-col justify-between">
+                          <div>
+                              <h2 class="text-3xl font-semibold text-gray-800">Three-Bedroom Villa</h2>
+                              <p class="text-gray-600 mt-4">
+                                 Three-Bedroom Villa features a large pool overlooking the bright turquoise waters of the shoreline
+                              </p>
+                              <p class="text-gray-800 text-xl font-semibold mt-4">From <span class="text-black">$7,560</span> / night</p>
+                              <p class="text-gray-500 text-sm">Including taxes & fees</p>
+                          </div>
+                          <div class="mt-6 text-center">
+                              <a href="booking.html">
+                                  <button class="px-6 py-3 bg-black text-white text-lg rounded-lg shadow-md hover:bg-gray-700 transition">
+                                      Book Now
+                                  </button>
+                              </a>
+                          </div>
+                      </div>
+                      <div class="md:col-span-2 bg-white p-6 rounded-lg shadow-md">
+                          <h3 class="text-2xl font-semibold text-center text-gray-800 mb-4">Amenities</h3>
+                          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-gray-600 text-sm">
+                            <div class="flex items-center space-x-2">
+                              <span class="list-disc">•</span>
+                              <p>Beachside with sea views</p>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                              <span class="list-disc">•</span>
+                              <p>Poolside sala,private deck</p>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                              <span class="list-disc">•</span>
+                              <p>Chef and butler</p>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                              <span class="list-disc">•</span>
+                              <p>Ensuite.king size bedrooms</p>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                              <span class="list-disc">•</span>
+                              <p>Bathtub,shower,twin vanities</p>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                              <span class="list-disc">•</span>
+                              <p>Two club cars</p>
+                              </div>
+                              <div class="flex items-center space-x-2">
+                                <span class="list-disc">•</span>
+                                <p>Living and Dining Pavilion</p>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+          <div id="two-bedroom-villa-details" class="hidden fixed inset-0 z-50 overflow-y-auto bg-gray-900 bg-opacity-50">
+            <div class="flex items-center justify-center min-h-screen p-4">
+                <div class="bg-gray-100 p-6 rounded-lg shadow-lg max-w-5xl w-full mx-auto overflow-y-auto max-h-[90vh]">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="overflow-hidden rounded-lg shadow-md">
+                            <div class="flex snap-x snap-mandatory overflow-x-auto scroll-smooth">
+                                <div class="w-full flex-shrink-0 snap-always">
+                                    <img src="images/2BR.jpg" alt="Two-Bedroom Palawan Villa"
+                                        class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                                </div>
+                                <div class="w-full flex-shrink-0 snap-always">
+                                    <img src="images/Two Bedroom.jpg" alt="Two-Bedroom Palawan Villa"
+                                        class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                                </div>
+                                <div class="w-full flex-shrink-0 snap-always">
+                                    <img src="images/TBPV.webp" alt="Two-Bedroom Palawan Villa"
+                                        class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                                </div>
+                                <div class="w-full flex-shrink-0 snap-always">
+                                  <img src="images/TBPV_Bathroom.jpg" alt="Two-Bedroom Palawan Villa"
+                                      class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                              </div>
+                              <div class="w-full flex-shrink-0 snap-always">
+                                <img src="images/TBPV_LA.jpg" alt="Two-Bedroom Palawan Villa"
+                                    class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                            </div>
+                            <div class="w-full flex-shrink-0 snap-always">
+                              <img src="images/TBPV_Exterior.jpg" alt="Two-Bedroom Palawan Villa"
+                                  class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                          </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-between">
+                            <div>
+                                <h2 class="text-3xl font-semibold text-gray-800">Two-Bedroom Palawan Villa</h2>
+                                <p class="text-gray-600 mt-4">
+                                    The Two-Bedroom Palawan Villas feature a large central pool and overlook the bright turquoise waters of the shoreline.
+                                </p>
+                                <p class="text-gray-800 text-xl font-semibold mt-4">From <span class="text-black">$6,496</span> / night</p>
+                                <p class="text-gray-500 text-sm">Including taxes & fees</p>
+                            </div>
+                            <div class="mt-6 text-center">
+                                <a href="booking.html">
+                                    <button class="px-6 py-3 bg-black text-white text-lg rounded-lg shadow-md hover:bg-gray-700 transition">
+                                        Book Now
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="md:col-span-2 bg-white p-6 rounded-lg shadow-md">
+                          <h3 class="text-2xl font-semibold text-center text-gray-800 mb-4">Amenities</h3>
+                          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-gray-600 text-sm">
+                            <div class="flex items-center space-x-2">
+                              <span class="list-disc">•</span>
+                              <p>Beachside with sea views</p>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                              <span class="list-disc">•</span>
+                              <p>Private swimming pool & deck</p>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                              <span class="list-disc">•</span>
+                              <p>Chef and butler</p>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                              <span class="list-disc">•</span>
+                              <p>2 Ensuite bedrooms</p>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                              <span class="list-disc">•</span>
+                              <p>Bathtub,shower,twin vanities</p>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                              <span class="list-disc">•</span>
+                              <p>Two club cars</p>
+                              </div>
+                              <div class="flex items-center space-x-2">
+                                <span class="list-disc">•</span>
+                                <p>Living and Dining Pavilion</p>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        <div id="one-bedroom-villa-details" class="hidden fixed inset-0 z-50 overflow-y-auto bg-gray-900 bg-opacity-50">
+          <div class="flex items-center justify-center min-h-screen p-4">
+              <div class="bg-gray-100 p-6 rounded-lg shadow-lg max-w-5xl w-full mx-auto overflow-y-auto max-h-[90vh]">
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                      <div class="overflow-hidden rounded-lg shadow-md">
+                          <div class="flex snap-x snap-mandatory overflow-x-auto scroll-smooth">
+                              <div class="w-full flex-shrink-0 snap-always">
+                                  <img src="images/1br.jpg" alt="One-Bedroom Villa"
+                                      class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                              </div>
+                              <div class="w-full flex-shrink-0 snap-always">
+                                  <img src="images/1br1.jpg" alt="One-Bedroom Villa"
+                                      class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                              </div>
+                              <div class="w-full flex-shrink-0 snap-always">
+                                  <img src="images/1br2.jpg" alt="One-Bedroom Villa"
+                                      class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                              </div>
+                              <div class="w-full flex-shrink-0 snap-always">
+                                <img src="images/1br3.jpg" alt="One-Bedroom Villa"
+                                    class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                            </div>
+                          <div class="w-full flex-shrink-0 snap-always">
+                            <img src="images/1br4.webp" alt="One-Bedroom Villa"
+                                class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                        </div>
+                        <div class="w-full flex-shrink-0 snap-always">
+                          <img src="images/1br5.jpg" alt="One-Bedroom Villa"
+                              class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                      </div>
+                      <div class="w-full flex-shrink-0 snap-always">
+                        <img src="images/1br6.webp" alt="One-Bedroom Villa"
+                            class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                    </div>
+                    <div class="w-full flex-shrink-0 snap-always">
+                      <img src="images/1br7.jpg" alt="One-Bedroom Villa"
+                          class="w-full h-full object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform">
+                  </div>
+                          </div>
+                      </div>
+                      <div class="flex flex-col justify-between">
+                          <div>
+                              <h2 class="text-3xl font-semibold text-gray-800">One-Bedroom Villa</h2>
+                              <p class="text-gray-600 mt-4">
+                                  The One-Bedroom Villa has a private swimming pool with a terrace and sea views and is staffed with a private chef and butler
+                              </p>
+                              <p class="text-gray-800 text-xl font-semibold mt-4">From <span class="text-black">$4,368</span> / night</p>
+                              <p class="text-gray-500 text-sm">Including taxes & fees</p>
+                          </div>
+                          <div class="mt-6 text-center">
+                              <a href="booking.html">
+                                  <button class="px-6 py-3 bg-black text-white text-lg rounded-lg shadow-md hover:bg-gray-700 transition">
+                                      Book Now
+                                  </button>
+                              </a>
+                          </div>
+                      </div>
+                      <div class="md:col-span-2 bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-semibold text-center text-gray-800 mb-4">Amenities</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-gray-600 text-sm">
+                          <div class="flex items-center space-x-2">
+                            <span class="list-disc">•</span>
+                            <p>Beachside with sea views</p>
+                          </div>
+                          <div class="flex items-center space-x-2">
+                            <span class="list-disc">•</span>
+                            <p>Poolside sala,private deck</p>
+                          </div>
+                          <div class="flex items-center space-x-2">
+                            <span class="list-disc">•</span>
+                            <p>Chef and butler</p>
+                          </div>
+                          <div class="flex items-center space-x-2">
+                            <span class="list-disc">•</span>
+                            <p>Ensuite,king size bedrooms</p>
+                          </div>
+                          <div class="flex items-center space-x-2">
+                            <span class="list-disc">•</span>
+                            <p>Bathtub,shower,twin vanities</p>
+                          </div>
+                          <div class="flex items-center space-x-2">
+                            <span class="list-disc">•</span>
+                            <p>Club car</p>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                              <span class="list-disc">•</span>
+                              <p>Living and Dining Pavilion</p>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+        </div>
+      </div>
+    </div>
+        <section class="mb-16">
+          <h2 class="text-4xl font-light text-gray-800 border-b-2 border-gray-200 pb-4">Find Us</h2>
+          <div class="relative w-full h-96 rounded-lg shadow-lg mt-6 overflow-hidden">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4813.233300768189!2d120.728158!3d11.356093999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTHCsDIxJzIxLjkiTiAxMjDCsDQzJzQxLjQiRQ!5e1!3m2!1sen!2sph!4v1741700360084!5m2!1sen!2sph"
+              class="w-full h-full border-0"
+              allowfullscreen
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </section>
+
+        <section class="mb-16">
+          <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+            Escape to Amanpulo and experience the epitome of luxury and serenity. Contact our reservations team to customize your stay.
+          </p>
+          <div class="mt-6 space-y-2 text-lg text-gray-700">
+            <p><strong>Email:</strong> reservations@amanpulo.com</p>
+            <p><strong>Phone:</strong> +63 2 123 4567</p>
+            <p><strong>Website:</strong> <a href="http://www.amanpulo.com" class="text-blue-600 hover:underline">www.amanpulo.com</a></p>
+          </div>
+        </section>
+      </div>
+
+      <footer class="bg-[#f5efe3] py-6 text-black text-center">
+        <div class="container mx-auto px-6">
+          <hr class="border-gray-300 mb-6">
+          <div class="flex flex-col md:flex-row items-center justify-between">
+            <h1 class="text-2xl font-light tracking-wide">ĀMAN</h1>
+            <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                <span class="text-sm">Follow us on:</span>
+                <a href="https://www.facebook.com/amandestinations"><img src="images/facebook.png" alt="Facebook" class="h-6"></a>
+                <a href="https://x.com/Amanresorts"><img src="images/twitter.png" alt="Twitter" class="h-6"></a>
+                <a href="https://www.instagram.com/aman/"><img src="images/instagram.png" alt="Instagram" class="h-6"></a>
+                <a href="https://www.youtube.com/c/AmanResortsHotelsResidences"><img src="images/youtube.png" alt="YouTube" class="h-6"></a>
+                <a href="https://uk.pinterest.com/Amanresorts/"><img src="images/pinterest.png" alt="Pinterest" class="h-6"></a>
+                <a href="https://weibo.com/amanjunkie"><img src="images/weibo.png" alt="Weibo" class="h-6"></a>
+                <a href="https://www.aman.com/sites/default/files/styles/thumbnail/public/2021-01/wechat-qr-code.png?itok=ROFIm1a1"><img src="images/wechat.png" alt="WeChat" class="h-6"></a>
+                <a href="https://api.whatsapp.com/send/?phone=94777743500&text&type=phone_number&app_absent=0"><img src="images/whatsapp.png" alt="WhatsApp" class="h-6"></a>
+            </div>
+            <p class="text-sm mt-4 md:mt-0">Copyright 2025, Aman Group S.a.r.l.</p>
+          </div>
+        </div>
+      </footer>
+
+      <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenu = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const overlay = document.getElementById('overlay');
+
+        function openMenu() {
+          mobileMenu.classList.remove('translate-x-full');
+          overlay.classList.remove('hidden');
+          document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenuFunc() {
+          mobileMenu.classList.add('translate-x-full');
+          overlay.classList.add('hidden');
+          document.body.style.overflow = '';
+        }
+
+        menuBtn.addEventListener('click', openMenu);
+        closeMenu.addEventListener('click', closeMenuFunc);
+        overlay.addEventListener('click', closeMenuFunc);
+        
+        const modal = document.getElementById('modal');
+        const modalContent = document.getElementById('modal-content');
+        const closeModalBtn = document.getElementById('close-modal');
+
+        document.querySelectorAll('[data-target]').forEach(button => {
+          button.addEventListener('click', () => {
+            const targetId = button.getAttribute('data-target');
+            const content = document.getElementById(targetId).innerHTML;
+            modalContent.innerHTML = content;
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+          });
+        });
+
+        closeModalBtn.addEventListener('click', () => {
+          modal.classList.add('hidden');
+          document.body.style.overflow = '';
+        });
+
+        modal.addEventListener('click', (event) => {
+          if (event.target === modal) {
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+          }
+        });
+      </script>
+    </body>
+    </html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+        }
+        .blur {
+            filter: blur(4px);
+        }
+    </style>
+    <title>Amanpulo - Amenities & Activities</title>
+</head>
+<body class="bg-[#f5efe3]">
+    <nav class="fixed top-0 left-0 w-full bg-[#f5efe3] bg-opacity-90 z-50 shadow-md">
+        <div class="container mx-auto flex items-center justify-between px-6 py-4">
+          <h1 class="text-2xl font-light tracking-wide">ĀMAN</h1>
+          <nav class="hidden md:flex space-x-6 text-black">
+            <a href="index.html" class="hover:text-gray-700">Homepage</a>
+            <a href="accommodation.html" class="hover:text-gray-700">Accommodation</a>
+            <a href="Amenities&Activities.html" class="hover:text-gray-700">Amenities & Activities</a>
+            <a href="contact.html" class="hover:text-gray-700">Contact Us</a>
+          </nav>
+          <button id="menu-btn" class="md:hidden text-gray-800 focus:outline-none">☰</button>
+        </div>
+      </nav>
+    
+      <div id="mobile-menu" class="fixed top-0 right-0 w-64 h-screen bg-[#f5efe3] shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto z-50 md:hidden">
+        <div class="p-6">
+          <button id="close-menu" class="text-gray-800 text-xl">✖</button>
+          <nav class="flex flex-col space-y-6 mt-10">
+            <a href="index.html" class="hover:text-gray-700">Homepage</a>
+            <a href="accommodation.html" class="hover:text-gray-700">Accommodation</a>
+            <a href="Amenities&Activities.html" class="hover:text-gray-700">Amenities & Activities</a>
+            <a href="contact.html" class="hover:text-gray-700">Contact Us</a>
+            <a href="booking.html">
+              <button class="bg-black text-white px-6 py-2 text-sm">Book Now</button>
+            </a>
+          </nav>
+        </div>
+      </div>
+
+    <section class="relative w-full min-h-[60vh] flex items-center justify-center overflow-hidden">
+        <img 
+            src="images/aa.webp" 
+            alt="Amanpulo Hero Image" 
+            class="absolute inset-0 w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="relative z-10 text-white text-center px-4 sm:px-6 md:px-12">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light tracking-wider leading-tight">
+                Amenities & Activities
+            </h1>
+            <p class="mt-4 text-base sm:text-lg md:text-xl max-w-2xl mx-auto">
+                Discover the unparalleled luxury and endless possibilities at Amanpulo.
+            </p>
+        </div>
+    </section>
+
+    <section class="bg-[#f5efe3] text-black py-12 px-6 md:px-12">
+        <h2 class="text-3xl font-semibold text-center">Amenities</h2>
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+            <div>
+                <ul class="space-y-2">
+                    <li>✔ Free High-Speed Internet (WiFi)</li>
+                    <li>✔ Fitness Center with Gym / Workout Room</li>
+                    <li>✔ Pool</li>
+                    <li>✔ Free breakfast</li>
+                    <li>✔ Beach</li>
+                    <li>✔ Bicycle rental</li>
+                    <li>✔ Babysitting</li>
+                    <li>✔ Children Activities (Kid / Family Friendly)</li>
+                </ul>
+                <ul class="space-y-2 hidden extra-amenities">
+                    <li>✔ Wifi</li>
+                    <li>✔ Yoga classes</li>
+                    <li>✔ Yoga room</li>
+                    <li>✔ Fitness / spa locker rooms</li>
+                    <li>✔ Fitness classes</li>
+                    <li>✔ Personal trainer</li>
+                    <li>✔ Hot tub</li>
+                    <li>✔ Pool / beach towels</li>
+                </ul>
+            </div>
+            <div>
+                <ul class="space-y-2">
+                    <li>✔ Private pool</li>
+                    <li>✔ Plunge pool</li>
+                    <li>✔ Bar / Lounge</li>
+                    <li>✔ Coffee shop</li>
+                    <li>✔ Restaurant</li>
+                    <li>✔ Breakfast available</li>
+                    <li>✔ Breakfast in the room</li>
+                    <li>✔ Complimentary Instant Coffee</li>
+                </ul>
+                <ul class="space-y-2 hidden extra-amenities">
+                    <li>✔ Complimentary tea</li>
+                    <li>✔ Kids' meals</li>
+                    <li>✔ Outdoor dining area</li>
+                    <li>✔ Special diet menus</li>
+                    <li>✔ Wine / champagne</li>
+                    <li>✔ Poolside bar</li>
+                    <li>✔ Boating</li>
+                    <li>✔ Diving</li>
+                </ul>
+            </div>
+            <div>
+                <ul class="space-y-2">
+                    <li>✔ Game room</li>
+                    <li>✔ Hiking</li>
+                    <li>✔ Snorkeling</li>
+                    <li>✔ Tennis court</li>
+                    <li>✔ Water sport equipment rentals</li>
+                    <li>✔ Windsurfing</li>
+                    <li>✔ Evening entertainment</li>
+                    <li>✔ Fishing</li>
+                </ul>
+                <ul class="space-y-2 hidden extra-amenities">
+                    <li>✔ Walking tours</li>
+                    <li>✔ Board games / puzzles</li>
+                    <li>✔ Kids club</li>
+                    <li>✔ Kids' outdoor play equipment</li>
+                    <li>✔ Highchairs available</li>
+                    <li>✔ Strollers</li>
+                    <li>✔ Airport transportation</li>
+                    <li>✔ Business Center with Internet Access</li>
+                </ul>
+            </div>
+        </div>   
+        <div class="text-center mt-4">
+            <button class="text-blue-600 cursor-pointer" onclick="toggleAllAmenities()" id="toggleBtn">Show More</button>
+        </div>
+    </section>
+
+    <section class="bg-[#f5efe3] text-black py-12 px-6 md:px-12">
+        <h2 class="text-3xl font-semibold text-center">Activities</h2>
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6" id="gallery">
+            <div class="gallery-item bg-white p-6 rounded-lg shadow-lg relative overflow-hidden">
+                <img src="images/scuba.jpg" alt="Water Sports" class="w-full h-48 object-cover rounded-lg transition-all duration-300">
+                <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                    <h3 class="text-xl font-semibold text-white">Water Sports</h3>
+                </div>
+                <p class="mt-2 text-gray-600">Enjoy a variety of water sports including snorkeling, diving, and windsurfing.</p>
+            </div>
+            <div class="gallery-item bg-white p-6 rounded-lg shadow-lg relative overflow-hidden">
+                <img src="images/cruises.webp" alt="Spa & Wellness" class="w-full h-48 object-cover rounded-lg transition-all duration-300">
+                <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                    <h3 class="text-xl font-semibold text-white">Cruises</h3>
+                </div>
+                <p class="mt-2 text-gray-600">Explore the changing hues of the waters surrounding Pamalican Island from the pontoon boat as the sun sets.</p>
+            </div>
+            <div class="gallery-item bg-white p-6 rounded-lg shadow-lg relative overflow-hidden">
+                <img src="images/island.jpg" alt="Island Exploration" class="w-full h-48 object-cover rounded-lg transition-all duration-300">
+                <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                    <h3 class="text-xl font-semibold text-white">Island Exploration</h3>
+                </div>
+                <p class="mt-2 text-gray-600">Discover the beauty of Pamalican Island with guided tours and hiking trails.</p>
+            </div>
+            <div class="gallery-item bg-white p-6 rounded-lg shadow-lg relative overflow-hidden">
+                <img src="images/dining.webp" alt="Dining Experiences" class="w-full h-48 object-cover rounded-lg transition-all duration-300">
+                <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                    <h3 class="text-xl font-semibold text-white">Dining Experiences</h3>
+                </div>
+                <p class="mt-2 text-gray-600">Savor exquisite culinary delights with our diverse dining options.</p>
+            </div>
+            <div class="gallery-item bg-white p-6 rounded-lg shadow-lg relative overflow-hidden">
+                <img src="images/spa.jpg" alt="Fitness & Yoga" class="w-full h-48 object-cover rounded-lg transition-all duration-300">
+                <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                    <h3 class="text-xl font-semibold text-white">Spa & Wellness</h3>
+                </div>
+                <p class="mt-2 text-gray-600">Relax and rejuvenate with our world-class spa treatments and wellness programs.</p>
+            </div>
+            <div class="gallery-item bg-white p-6 rounded-lg shadow-lg relative overflow-hidden">
+                <img src="images/celeb.webp" alt="Cultural Activities" class="w-full h-48 object-cover rounded-lg transition-all duration-300">
+                <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                    <h3 class="text-xl font-semibold text-white">Celebrations</h3>
+                </div>
+                <p class="mt-2 text-gray-600">Amanpulo provides a consummately private island retreat for celebrations - from weddings and anniversaries to special birthdays and events. </p>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="bg-[#f5efe3] py-6 text-black text-center">
+        <div class="container mx-auto px-6">
+            <hr class="border-gray-300 mb-6">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <h1 class="text-2xl font-light tracking-wide">ĀMAN</h1>
+                <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                    <span class="text-sm">Follow us on:</span>
+                    <a href="https://www.facebook.com/amandestinations"><img src="images/facebook.png" alt="Facebook" class="h-6"></a>
+                    <a href="https://x.com/Amanresorts"><img src="images/twitter.png" alt="Twitter" class="h-6"></a>
+                    <a href="https://www.instagram.com/aman/"><img src="images/instagram.png" alt="Instagram" class="h-6"></a>
+                    <a href="https://www.youtube.com/c/AmanResortsHotelsResidences"><img src="images/youtube.png" alt="YouTube" class="h-6"></a>
+                    <a href="https://uk.pinterest.com/Amanresorts/"><img src="images/pinterest.png" alt="Pinterest" class="h-6"></a>
+                    <a href="https://weibo.com/amanjunkie"><img src="images/weibo.png" alt="Weibo" class="h-6"></a>
+                    <a href="https://www.aman.com/sites/default/files/styles/thumbnail/public/2021-01/wechat-qr-code.png?itok=ROFIm1a1"><img src="images/wechat.png" alt="WeChat" class="h-6"></a>
+                    <a href="https://api.whatsapp.com/send/?phone=94777743500&text&type=phone_number&app_absent=0"><img src="images/whatsapp.png" alt="WhatsApp" class="h-6"></a>
+                </div>
+                <p class="text-sm mt-4 md:mt-0">Copyright 2025, Aman Group S.a.r.l.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleAllAmenities() {
+            const sections = document.querySelectorAll('.extra-amenities');
+            const btn = document.getElementById('toggleBtn');
+
+            sections.forEach(section => {
+                section.classList.toggle("hidden");
+            });
+
+            btn.textContent = btn.textContent === "Show More" ? "Show Less" : "Show More";
+        }
+
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenu = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const overlay = document.getElementById('overlay');
+
+        menuBtn.addEventListener('click', openMenu);
+        closeMenu.addEventListener('click', closeMenuFunc);
+        overlay.addEventListener('click', closeMenuFunc);
+
+        function openMenu() {
+          mobileMenu.classList.remove('translate-x-full');
+          overlay.classList.remove('hidden');
+          document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenuFunc() {
+          mobileMenu.classList.add('translate-x-full');
+          overlay.classList.add('hidden');
+          document.body.style.overflow = '';
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            galleryItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    galleryItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.querySelector('img').classList.add('blur');
+                        }
+                    });
+                });
+
+                item.addEventListener('mouseleave', function() {
+                    galleryItems.forEach(otherItem => {
+                        otherItem.querySelector('img').classList.remove('blur');
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

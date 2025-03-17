@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+<body class="bg-[#f5efe3]">
+    <!-- Header Section -->
+    <header class="fixed top-0 left-0 w-full bg-[#f5efe3] bg-opacity-90 z-50 shadow-md">
+        <div class="container mx-auto flex items-center justify-between px-6 py-4">
+            <h1 class="text-2xl font-light tracking-wide">ĀMAN</h1>
+            <nav class="hidden md:flex space-x-6 text-black">
+                <a href="index.html" class="hover:text-gray-700">Homepage</a>
+                <a href="accommodation.html" class="hover:text-gray-700">Accommodation</a>
+                <a href="#" class="hover:text-gray-700">Amenities & Activities</a>
+                <a href="contact.html" class="hover:text-gray-700">Contact Us</a>
+            </nav>
+            <button id="menu-btn" class="md:hidden text-gray-800 focus:outline-none">☰</button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed top-0 right-0 w-64 h-screen bg-[#f5efe3] shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto z-50 md:hidden">
+        <div class="p-6">
+            <button id="close-menu" class="text-gray-800 text-xl">✖</button>
+            <nav class="flex flex-col space-y-6 mt-10">
+                <a href="index.html" class="hover:text-gray-700">Homepage</a>
+                <a href="accommodation.html" class="hover:text-gray-700">Accommodation</a>
+                <a href="#" class="hover:text-gray-700">Amenities & Activities</a>
+                <a href="contact.html" class="hover:text-gray-700">Contact Us</a>
+                <a href="booking.html">
+                    <button class="bg-black text-white px-6 py-2 text-sm">
+                        Book Now
+                    </button>
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="relative w-full h-64 bg-cover bg-center" style="background-image: url('images/contact.jpg');">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="relative z-10 flex flex-col items-center justify-center h-full text-white">
+            <h1 class="text-4xl font-bold">ĀMAN</h1>
+            <p class="text-sm uppercase tracking-wide">Select your dates at Amanpulo</p>
+        </div>
+    </div>
+
+    <!-- Booking Form Section -->
+    <div class="bg-[#f5efe3] py-12 px-6 md:px-12">
+        <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Make a Reservation</h2>
+
+            <form id="reservation-form">
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                    <input type="text" id="name" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black" required>
+                    <p id="name-error" class="text-red-500 text-sm mt-1 hidden">Please enter your full name.</p>
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Contact Number</label>
+                    <input type="tel" id="contact" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black" required>
+                    <p id="contact-error" class="text-red-500 text-sm mt-1 hidden">Please enter a valid 10-digit contact number.</p>
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Check-in Date</label>
+                    <input type="date" id="checkin" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black" required>
+                    <p id="checkin-error" class="text-red-500 text-sm mt-1 hidden">Please select a valid check-in date.</p>
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Check-out Date</label>
+                    <input type="date" id="checkout" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black" required>
+                    <p id="checkout-error" class="text-red-500 text-sm mt-1 hidden">Check-out date must be after check-in date.</p>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Number of Guests</label>
+                    <input type="number" id="guests" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black" min="1" required>
+                    <p id="guests-error" class="text-red-500 text-sm mt-1 hidden">Please enter a valid number of guests (minimum 1).</p>
+                </div>
+
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Room Type</label>
+                    <select id="room" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-black" required>
+                        <option value="" disabled selected>Select a Room</option>
+                        <option value="Casitas">Beach Casitas</option>
+                        <option value="Casitas">Beach Pool Casitas</option>
+                        <option value="Casitas">Treetop Casitas</option>
+                        <option value="Casitas">Treetop Pool Casitas</option>
+                        <option value="Casitas">Hillside Casitas</option>
+                        <option value="Casitas">Deluxe hill Casitas</option>
+                        <option value="Villas">Four-Bedroom Palawan Villa</option>
+                        <option value="Villas">Four-Bedroom Lagoon Villa</option>
+                        <option value="Villas">Three-Bedroom Villa</option>
+                        <option value="Villas">Two-Bedroom Villa</option>
+                        <option value="Villas">One-Bedroom Villa</option>
+                    </select>
+                    <p id="room-error" class="text-red-500 text-sm mt-1 hidden">Please select a room type.</p>
+                </div>
+
+                <button type="submit" class="w-full bg-black text-white py-3 rounded-md hover:bg-gray-800 transition duration-300">Submit</button>
+            </form>
+
+            <div class="mt-6 text-center space-y-2">
+                <button onclick="history.back()" class="text-blue-500 hover:underline cursor-pointer">Back</button>
+                <span class="text-gray-400">|</span>
+                <a href="index.html" class="text-blue-500 hover:underline">Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-[#f5efe3] py-6 text-black text-center">
+        <div class="container mx-auto px-6">
+            <hr class="border-gray-300 mb-6">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <h1 class="text-2xl font-light tracking-wide">ĀMAN</h1>
+
+                <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                    <span class="text-sm">Follow us on:</span>
+                    <a href="#"><img src="images/facebook.png" alt="Facebook" class="h-6"></a>
+                    <a href="#"><img src="images/twitter.png" alt="Twitter" class="h-6"></a>
+                    <a href="#"><img src="images/instagram.png" alt="Instagram" class="h-6"></a>
+                    <a href="#"><img src="images/youtube.png" alt="YouTube" class="h-6"></a>
+                    <a href="#"><img src="images/pinterest.png" alt="Pinterest" class="h-6"></a>
+                    <a href="#"><img src="images/weibo.png" alt="Weibo" class="h-6"></a>
+                    <a href="#"><img src="images/wechat.png" alt="WeChat" class="h-6"></a>
+                    <a href="#"><img src="images/whatsapp.png" alt="WhatsApp" class="h-6"></a>
+                </div>
+
+                <p class="text-sm mt-4 md:mt-0">Copyright 2025, Aman Group S.a.r.l.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40"></div>
+
+    <script>
+        document.getElementById("menu-btn").addEventListener("click", function() {
+            document.getElementById("mobile-menu").classList.remove("translate-x-full");
+        });
+        document.getElementById("close-menu").addEventListener("click", function() {
+            document.getElementById("mobile-menu").classList.add("translate-x-full");
+        });
+
+        document.getElementById("reservation-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            let name = document.getElementById("name").value.trim();
+            let contact = document.getElementById("contact").value.trim();
+            let checkin = document.getElementById("checkin").value;
+            let checkout = document.getElementById("checkout").value;
+            let room = document.getElementById("room").value;
+            let guests = document.getElementById("guests").value;
+
+            document.querySelectorAll(".text-red-500").forEach((el) => {
+                el.classList.add("hidden");
+            });
+
+            let isValid = true;
+
+            if (!name) {
+                document.getElementById("name-error").classList.remove("hidden");
+                isValid = false;
+            }
+
+            if (!/^\d{10}$/.test(contact)) {
+                document.getElementById("contact-error").classList.remove("hidden");
+                isValid = false;
+            }
+
+            if (!checkin) {
+                document.getElementById("checkin-error").classList.remove("hidden");
+                isValid = false;
+            }
+
+            if (!checkout || new Date(checkout) <= new Date(checkin)) {
+                document.getElementById("checkout-error").classList.remove("hidden");
+                isValid = false;
+            }
+
+            if (!room) {
+                document.getElementById("room-error").classList.remove("hidden");
+                isValid = false;
+            }
+
+            if (!guests || guests < 1) {
+                document.getElementById("guests-error").classList.remove("hidden");
+                isValid = false;    
+            }
+
+            if (isValid) {
+                alert("Reservation submitted successfully!");
+                document.getElementById("reservation-form").reset();
+            }
+        });
+    </script>
+</body>
+</html>
